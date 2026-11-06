@@ -6,6 +6,7 @@
 	--highlight: #d4af37; /* Dorado sutil para ofertas o estrellas */
 
 	font-size: 10px;
+  font-family: Montserrat, sans-serif;
 }
 *,
 *::before,
@@ -61,6 +62,7 @@ select {
 	display: flex;
 	text-decoration: none;
 	color: inherit;
+  font-weight: bold;
 	padding: 2rem 4rem;
 }
 #navbar-ul li {

@@ -14,7 +14,7 @@ const renderCarrito = () => {
 		listaProductos.append(precio);
 	}
 	const total = document.createElement("p");
-	total.textContent = `Total: $${precioTotal}`;
+	total.textContent = `Total: $${precioTotal.toFixed(2)}`;
 	listaProductos.append(total);
 };
 const carrito = obtenerCarritoStorage();

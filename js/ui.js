@@ -7,8 +7,13 @@ import {
 
 export const actualizarContador = (carrito) => {
 	const contador = document.getElementById("contador-carrito");
+	contador.innerHTML = "";
 	if (contador) {
-		contador.textContent = carrito.length || "";
+		const productos = document.createElement("i");
+		productos.classList.add("fa", "fa-cart-plus");
+		productos.ariaHidden = true;
+		productos.textContent = carrito.length || "";
+		contador.append(productos);
 	}
 };
 
