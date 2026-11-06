@@ -110,3 +110,29 @@ main h1 {
   min-height: 4rem;
   background-color: var(--accent);
 }
+#contacto {
+  margin: auto;
+}
+#contacto form {
+  display: flex;
+  flex-direction: column; 
+  width: 50dvw;
+  padding:2rem;
+}
+#contacto form textarea {
+  height: 100px;
+  min-height: 50px;
+  max-height: 200px;
+  resize:none;
+  field-sizing: content;
+
+}
+#contacto form textarea, #contacto form input {
+    width: 100%;
+}
+
+@media (max-width: 720px){
+  #contacto form {
+    width: 90dvw;
+  }
+}
