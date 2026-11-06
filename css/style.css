@@ -48,7 +48,11 @@ select {
 	background-color: var(--accent);
 	color: var(--text-main);
 }
-
+#nav {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
 #navbar-ul {
 	display: flex;
 	justify-content: center;
@@ -73,6 +77,10 @@ select {
 	box-shadow: inset 0 0 0 1px black;
 }
 main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex:1;
   position: relative;
 }
@@ -119,6 +127,7 @@ main h1 {
   justify-content: center;
   width:50dvw;
   margin: 0 auto;
+  flex:1;
 }
 #lista-productos p {
   text-align: right;
@@ -139,6 +148,20 @@ margin-left:2rem;
 .botones-carrito button{
   margin-right: 1rem;
   flex:1;
+}
+#contador-carrito {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:fixed;
+  width:5rem;
+  height: 5rem;
+  top:8rem;
+  right: 4rem;
+  text-decoration: none;
+  color: white;
+  background-color: #000;
+  border-radius: 100%;
 }
 #contacto {
   margin: auto;

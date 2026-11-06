@@ -6,14 +6,18 @@ import {
 } from "./funcionesCarrito.js";
 
 export const actualizarContador = (carrito) => {
-	const contador = document.getElementById("contador-carrito");
+	const main = document.querySelector("main");
+	const contador = document.createElement("a");
+	contador.href = "../pages/carrito.html";
+
 	contador.innerHTML = "";
-	if (contador) {
-		const productos = document.createElement("i");
-		productos.classList.add("fa", "fa-cart-plus");
-		productos.ariaHidden = true;
-		productos.textContent = carrito.length || "";
-		contador.append(productos);
+	if (carrito.length > 0) {
+		contador.id = "contador-carrito";
+		contador.classList.add("fa", "fa-cart-plus");
+		contador.textContent = carrito.length || "";
+		main.append(contador);
+	} else {
+		contador.remove();
 	}
 };
 
@@ -49,7 +53,7 @@ export const mostrarProductos = async () => {
 			descripcion.innerText = prod.description;
 			// boton agregar al carrito
 			const comprar = document.createElement("button");
-			comprar.innerText = "Agreagr al carrito";
+			comprar.innerText = "Agregar al carrito";
 			comprar.addEventListener("click", () => {
 				agregarAlCarrito(prod);
 			});
