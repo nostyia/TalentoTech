@@ -1,5 +1,20 @@
 import { obtenerProductos } from "./api.js";
+import {
+	agregarAlCarrito,
+	borrarDelCarrito,
+	vaciarCarrito,
+} from "./funcionesCarrito.js";
 
+export const actualizarContador = (carrito) => {
+	const contador = document.getElementById("contador-carrito");
+	if (contador) {
+		contador.textContent = carrito.length || "";
+	}
+};
+
+export const mostrarMensaje = (mensaje) => {
+	alert(mensaje);
+};
 export const mostrarProductos = async () => {
 	obtenerProductos().then((respuesta) => {
 		for (const prod of respuesta) {
@@ -13,20 +28,26 @@ export const mostrarProductos = async () => {
 			// imagen de cada producto
 			const imagen = document.createElement("img");
 			imagen.src = prod.thumbnail;
-			producto.append(imagen);
+
 			// titulo de cada producto
 			const titulo = document.createElement("h2");
 			titulo.innerText = prod.title;
-			producto.append(titulo);
 			// descripcion de cada producto
 			const descripcion = document.createElement("p");
 			descripcion.innerText = prod.description;
-			producto.append(descripcion);
 			// boton agregar al carrito
 			const comprar = document.createElement("button");
 			comprar.innerText = "Agreagr al carrito";
+			comprar.addEventListener("click", () => {
+				agregarAlCarrito(prod);
+			});
+			producto.append(imagen);
+			producto.append(titulo);
+			producto.append(descripcion);
 			producto.append(comprar);
 			contenedorProductos.append(producto);
 		}
 	});
 };
+
+
