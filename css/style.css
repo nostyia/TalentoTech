@@ -74,6 +74,7 @@ select {
 }
 main {
   flex:1;
+  position: relative;
 }
 main h1 {
 	color: var(--text-main);
@@ -112,6 +113,33 @@ main h1 {
   min-height: 4rem;
   background-color: var(--accent);
 }
+#lista-productos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:50dvw;
+  margin: 0 auto;
+}
+#lista-productos p {
+  text-align: right;
+}
+#lista-productos li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#lista-productos li span {
+margin-left:2rem;
+}
+.botones-carrito {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.botones-carrito button{
+  margin-right: 1rem;
+  flex:1;
+}
 #contacto {
   margin: auto;
 }
@@ -133,6 +161,18 @@ main h1 {
     width: 100%;
 }
 
+.carrito-popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 4rem;
+  background-color: #000;
+  color: var(--bg-main);
+  font-size: 2rem;
+  font-weight: bold;
+}
 @media (max-width: 720px){
   #contacto form {
     width: 90dvw;

@@ -18,7 +18,14 @@ export const actualizarContador = (carrito) => {
 };
 
 export const mostrarMensaje = (mensaje) => {
-	alert(mensaje);
+	const contenedor = document.querySelector("main");
+	const popup = document.createElement("div");
+	popup.classList.add("carrito-popup");
+	popup.textContent = mensaje;
+	contenedor.append(popup);
+	setTimeout(() => {
+		popup.remove();
+	}, 1000);
 };
 export const mostrarProductos = async () => {
 	obtenerProductos().then((respuesta) => {
@@ -54,5 +61,3 @@ export const mostrarProductos = async () => {
 		}
 	});
 };
-
-
