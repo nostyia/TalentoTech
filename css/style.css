@@ -25,6 +25,7 @@ body {
 	font-size: 16px;
 	background-color: var(--bg-main);
 	color: var(--text-main);
+  height: 100dvh;
 }
 img,
 picture,
@@ -69,6 +70,9 @@ select {
 	background-color: var(--bg-main);
 	box-shadow: inset 0 0 0 1px black;
 }
+main {
+  flex:1;
+}
 main h1 {
 	color: var(--text-main);
 }
@@ -97,4 +101,12 @@ main h1 {
 .producto button {
 	display: block;
 	margin: 1rem auto;
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 4rem;
+  background-color: var(--accent);
 }
