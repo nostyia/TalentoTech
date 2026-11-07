@@ -55,15 +55,22 @@ select {
 #header {
 	background-color: var(--col-main);
 	color: var(--text-main);
-  padding: 0 4rem;
+
 }
 #nav {
   display:flex;
   justify-content: space-between;
   align-items: center;
 }
+#menu-toggle {
+  display: none;
+}
+#toggle{
+  display:none;
+}
 #logo {
   height: 4rem;
+  margin-left:4rem;
 }
 #navbar-ul {
 	display: flex;
@@ -72,6 +79,7 @@ select {
 	list-style: none;
 	height: 6rem;
 	overflow: hidden;
+  margin-right: 4rem;
 }
 
 #navbar-ul li a {
@@ -99,7 +107,7 @@ main {
 main h1 {
 	color: var(--col-main);
   margin: 2rem;
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: justify;
 }
 #contenedor-productos {
@@ -269,7 +277,41 @@ main h1 {
   font-size: 2rem;
   font-weight: bold;
 }
+
 @media (max-width: 720px){
+main h1{
+  font-size: 2rem;
+}
+#contenedor-productos {
+display: grid;
+grid-template-columns: 1fr;
+}
+#menu-toggle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 2.5rem;
+}
+#toggle:checked ~ #navbar-ul {
+  display: none;
+  background-color: #fff;
+}
+#logo {
+  height: 3rem;
+}
+
+#navbar-ul {
+  flex-direction: column;
+  background-color: #fff;
+  position: absolute;
+  top:4.5rem;
+  right: 0;
+	height: auto;
+  z-index: 10;
+  margin: 0;
+}
   #contacto form {
     width: 90dvw;
   }
