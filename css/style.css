@@ -31,7 +31,7 @@ body {
 	flex-direction: column;
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
-	font-size: 16px;
+	font-size: 1.4rem;
 	background-color: var(--bg-main);
 	color: var(--text-main);
   height: 100dvh;
@@ -55,7 +55,7 @@ select {
 #header {
 	background-color: var(--col-main);
 	color: var(--text-main);
-  padding: 0 2rem;
+  padding: 0 4rem;
 }
 #nav {
   display:flex;
@@ -79,7 +79,7 @@ select {
 	text-decoration: none;
 	color: inherit;
   font-weight: 800;
-	padding: 2rem 4rem;
+	padding: 2rem;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -94,6 +94,7 @@ main {
   align-items: center;
   flex:1;
   position: relative;
+  padding:0 4rem;
 }
 main h1 {
 	color: var(--col-main);
@@ -105,7 +106,6 @@ main h1 {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 2rem;
-	padding:0 2rem;
 }
 .producto {
   display:flex;
@@ -119,6 +119,7 @@ main h1 {
 .producto h2 {
 	color: var(--accent-main);
   margin: 1rem 0;
+  font-size: 1.8rem;
 }
 .producto p {
 	text-align: justify;
@@ -158,30 +159,42 @@ main h1 {
 #lista-productos {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width:50dvw;
-  margin: 0 auto;
+  justify-content: space-between;
+  min-width:50dvw;
+  min-height: 50dvh;
   flex:1;
+  background-color: color-mix(var(--col-main) 20%, transparent);
+  padding: 4rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 0.5rem 0 var(--col-main);
 }
 #lista-productos p {
-  text-align: right;
-  margin-right: 6rem;
 }
 #lista-productos li {
     display: grid;
-    grid-template-columns: 1fr 100px 50px;
+    grid-template-columns: 6rem 1fr 6rem;
     align-items: center;
+    padding: 1rem;
 }
-#lista-productos li span {
-margin-left:2rem;
+#lista-productos li:nth-child(odd){
+  background-color: var(--accent);
 }
+
+#lista-productos li button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .botones-carrito {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: auto;
+  gap: 2rem;
 }
 .botones-carrito button{
-  margin-right: 1rem;
   flex:1;
 }
 #contador-carrito {

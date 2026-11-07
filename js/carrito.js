@@ -13,7 +13,7 @@ const renderCarrito = () => {
 
 		for (const prod of carrito) {
 			const eliminar = document.createElement("button");
-			eliminar.textContent = "X";
+			eliminar.classList.add("fa", "fa-times");
 			eliminar.addEventListener("click", () => {
 				listaProductos.innerHTML = "";
 				borrarDelCarrito(prod);
@@ -22,18 +22,20 @@ const renderCarrito = () => {
 				mostrarMensaje("Producto eliminado");
 			});
 			const producto = document.createElement("li");
-			producto.textContent = prod.title;
+			const prodtitulo = document.createElement("span");
+			prodtitulo.textContent = prod.title;
 			const precio = document.createElement("span");
 			precioTotal = parseFloat(precioTotal) + prod.price;
 			precio.textContent = `$${prod.price}`;
-			producto.append(precio);
 			producto.append(eliminar);
+			producto.append(prodtitulo);
+			producto.append(precio);
 			listaProductos.append(producto);
 		}
 
 		const total = document.createElement("p");
 		total.textContent = `Total: $${precioTotal.toFixed(2)}`;
-		listaProductos.append(total);
+
 		const botonReset = document.createElement("button");
 		botonReset.innerText = "Borrar";
 		botonReset.addEventListener("click", () => {
@@ -61,6 +63,7 @@ const renderCarrito = () => {
 		botonComprar.innerText = "Finalizar Compra";
 		grupoBotones.append(botonReset);
 		grupoBotones.append(botonComprar);
+		grupoBotones.append(total);
 		listaProductos.append(grupoBotones);
 
 		botonComprar.addEventListener("click", () => {
