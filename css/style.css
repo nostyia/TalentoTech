@@ -169,8 +169,7 @@ main h1 {
   margin-bottom: 2rem;
   box-shadow: 0 0 0.5rem 0 var(--col-main);
 }
-#lista-productos p {
-}
+
 #lista-productos li {
     display: grid;
     grid-template-columns: 6rem 1fr 6rem;
@@ -217,13 +216,25 @@ main h1 {
 
 }
 #contacto {
-  margin: auto;
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width:50dvw;
+  min-height: 50dvh;
+  background-color: color-mix(var(--col-main) 20%, transparent);
+  padding: 4rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem 0 var(--col-main);
 }
 #contacto form {
   display: flex;
-  flex-direction: column; 
-  width: 50dvw;
-  padding:2rem;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+  height: 100%;
+}
+#contacto form label {
+  padding: 1rem 0;
 }
 #contacto form textarea {
   height: 100px;
@@ -231,15 +242,16 @@ main h1 {
   max-height: 200px;
   resize:none;
   field-sizing: content;
-
 }
 #contacto form textarea, #contacto form input {
     width: 100%;
-    border:2px solid var(--col-main)
+    border:2px solid var(--col-main);
+    padding: 1rem;
+    margin-top: 0.5rem;
 }
-
 #contacto form button{
   background-color: var(--col-main);
+  padding: 1rem;
   border: none;
   cursor: pointer;
 }
