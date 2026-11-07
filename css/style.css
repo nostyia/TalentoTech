@@ -154,7 +154,7 @@ main h1 {
   min-height: 4rem;
   background-color: var(--col-main);
   color: white;
-  font-width: 800;
+  font-weight: 800;
 }
 #lista-productos {
   display: flex;
