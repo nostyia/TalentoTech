@@ -7,18 +7,20 @@ import {
 
 export const actualizarContador = (carrito) => {
 	const main = document.querySelector("main");
-	const contador = document.createElement("a");
-	contador.href = "../pages/carrito.html";
+  const contadorExiste = document.querySelector("#contador-carrito");
 
-	contador.innerHTML = "";
 	if (carrito.length > 0) {
+		if (contadorExiste) {
+			contadorExiste.remove();
+		}
+		const contador = document.createElement("a");
+		contador.href = "../pages/carrito.html";
 		contador.id = "contador-carrito";
 		contador.classList.add("fa", "fa-cart-plus");
+		contador.remove();
 		contador.textContent = carrito.length || "";
 		main.append(contador);
-	} else {
-		contador.remove();
-	}
+	} 
 };
 
 export const mostrarMensaje = (mensaje) => {

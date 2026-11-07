@@ -4,9 +4,9 @@ import { vaciarCarrito, borrarDelCarrito } from "./funcionesCarrito.js";
 
 const renderCarrito = () => {
 	const carrito = obtenerCarritoStorage();
+	const main = document.querySelector("main");
+	const listaProductos = document.createElement("div");
 	if (carrito.length) {
-		const main = document.querySelector("main");
-		const listaProductos = document.createElement("div");
 		listaProductos.id = "lista-productos";
 		main.append(listaProductos);
 		let precioTotal = 0;
@@ -15,7 +15,7 @@ const renderCarrito = () => {
 			const eliminar = document.createElement("button");
 			eliminar.classList.add("fa", "fa-times");
 			eliminar.addEventListener("click", () => {
-				listaProductos.innerHTML = "";
+				listaProductos.remove();
 				borrarDelCarrito(prod);
 				actualizarContador(carrito);
 				renderCarrito();
@@ -72,7 +72,7 @@ const renderCarrito = () => {
 				actualizarContador(carrito);
 				renderCarrito();
 				mostrarMensaje("Gracias por Comprar");
-				listaProductos.innerHTML = "";
+				listaProductos.remove();
 				setTimeout(() => {
 					location.reload();
 				}, 1000);
