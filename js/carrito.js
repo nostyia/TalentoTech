@@ -58,7 +58,7 @@ const renderCarrito = () => {
 				vaciarCarrito();
 				actualizarContador(carrito);
 				renderCarrito();
-				mostrarMensaje("gracias por comprar");
+				mostrarMensaje("Gracias por Comprar");
 				listaProductos.innerHTML = "";
 				setTimeout(() => {
 					location.reload();

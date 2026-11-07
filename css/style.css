@@ -1,9 +1,8 @@
 :root {
-	--bg-main: #faf9f6;
+	--bg-main: #F5F3EF;
+  --col-main: #F7A8C4;
 	--text-main: #3a3532;
-	--accent: #8a9a86; /* Verde salvia */
-	--accent-dark: #4f5d4e; /* Verde oliva para textos destacados */
-	--highlight: #d4af37; /* Dorado sutil para ofertas o estrellas */
+	--accent: #C9457A;
 
 	font-size: 10px;
   font-family: Montserrat, sans-serif;
@@ -45,13 +44,17 @@ select {
 }
 
 #header {
-	background-color: var(--accent);
+	background-color: var(--col-main);
 	color: var(--text-main);
+  padding: 0 2rem;
 }
 #nav {
   display:flex;
   justify-content: space-between;
   align-items: center;
+}
+#logo {
+  height: 4rem;
 }
 #navbar-ul {
 	display: flex;
@@ -66,15 +69,14 @@ select {
 	display: flex;
 	text-decoration: none;
 	color: inherit;
-  font-weight: bold;
+  font-weight: 800;
 	padding: 2rem 4rem;
+  transition: background-color 0.3s ease-in-out;
 }
-#navbar-ul li {
-	transition: background-color 0.5s ease-in-out;
-}
-#navbar-ul li:hover {
+
+#navbar-ul li:hover a{
 	background-color: var(--bg-main);
-	box-shadow: inset 0 0 0 1px black;
+  color: var(--col-main);
 }
 main {
   display: flex;
@@ -94,32 +96,52 @@ main h1 {
 	padding: 2rem;
 }
 .producto {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 	background-color: var(--bg-main);
 	padding: 1rem;
-	border-radius: 0.5rem;
-	box-shadow: 0 0 0.5rem 0 var(--bg-main);
+	border-radius: 1rem;
+	box-shadow: 0 0 0.5rem 0 var(--col-main);
 }
 .producto h2 {
 	color: var(--accent-main);
+  margin: 1rem 0;
 }
 .producto p {
 	text-align: justify;
+  flex:1;
 }
 .producto img {
 	width: 100%;
-	border-bottom: 1px solid var(--bg-main);
+	border-bottom: 1px solid var(--col-main);
 }
 .producto button {
-	display: block;
-	margin: 1rem auto;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: var(--col-main);
+    padding: 1rem;
+    border-radius: 0 0 1rem 1rem;
 }
+.producto:hover button {
+  background-color: var(--accent);
+}
+.producto:hover {
+  box-shadow: 0 0 0.5rem 0 var(--accent);
+} 
 
 #footer {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 4rem;
-  background-color: var(--accent);
+  background-color: var(--col-main);
+  color: white;
+  font-width: 800;
 }
 #lista-productos {
   display: flex;
