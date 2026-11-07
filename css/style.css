@@ -165,10 +165,11 @@ main h1 {
 }
 #lista-productos p {
   text-align: right;
+  margin-right: 6rem;
 }
 #lista-productos li {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 100px 50px;
     align-items: center;
 }
 #lista-productos li span {

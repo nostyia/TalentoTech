@@ -1,6 +1,6 @@
 import { obtenerCarritoStorage } from "./storage.js";
 import { actualizarContador, mostrarMensaje } from "./ui.js";
-import { vaciarCarrito } from "./funcionesCarrito.js";
+import { vaciarCarrito, borrarDelCarrito } from "./funcionesCarrito.js";
 
 const renderCarrito = () => {
 	const carrito = obtenerCarritoStorage();
@@ -12,12 +12,22 @@ const renderCarrito = () => {
 		let precioTotal = 0;
 
 		for (const prod of carrito) {
-			precioTotal = parseFloat(precioTotal) + prod.price;
+			const eliminar = document.createElement("button");
+			eliminar.textContent = "X";
+			eliminar.addEventListener("click", () => {
+				listaProductos.innerHTML = "";
+				borrarDelCarrito(prod);
+				actualizarContador(carrito);
+				renderCarrito();
+				mostrarMensaje("Producto eliminado");
+			});
 			const producto = document.createElement("li");
 			producto.textContent = prod.title;
 			const precio = document.createElement("span");
+			precioTotal = parseFloat(precioTotal) + prod.price;
 			precio.textContent = `$${prod.price}`;
 			producto.append(precio);
+			producto.append(eliminar);
 			listaProductos.append(producto);
 		}
 
