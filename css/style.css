@@ -3,7 +3,16 @@
   --col-main: #F7A8C4;
 	--text-main: #3a3532;
 	--accent: #C9457A;
-
+/*
+Rosado suave — #F7A8C4
+Rosa palo — #FFD1DC
+Rosa intenso — #E75480
+Fucsia apagado — #C9457A
+Blanco puro — #FFFFFF
+Blanco perla — #F5F3EF
+Marfil — #FFFDF7
+Blanco rosado — #FDF6F8
+*/
 	font-size: 10px;
   font-family: Montserrat, sans-serif;
 }
@@ -76,7 +85,7 @@ select {
 
 #navbar-ul li:hover a{
 	background-color: var(--bg-main);
-  color: var(--col-main);
+  color: var(--accent);
 }
 main {
   display: flex;
@@ -87,13 +96,16 @@ main {
   position: relative;
 }
 main h1 {
-	color: var(--text-main);
+	color: var(--col-main);
+  margin: 2rem;
+  font-size: 4rem;
+  text-align: justify;
 }
 #contenedor-productos {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 2rem;
-	padding: 2rem;
+	padding:0 2rem;
 }
 .producto {
   display:flex;
@@ -182,8 +194,13 @@ margin-left:2rem;
   right: 4rem;
   text-decoration: none;
   color: white;
-  background-color: #000;
+  background-color: var(--col-main);
   border-radius: 100%;
+  transition: background 0.3s ease-in-out;
+}
+#contador-carrito:hover {
+  background-color: var(--accent);
+
 }
 #contacto {
   margin: auto;
@@ -204,6 +221,13 @@ margin-left:2rem;
 }
 #contacto form textarea, #contacto form input {
     width: 100%;
+    border:2px solid var(--col-main)
+}
+
+#contacto form button{
+  background-color: var(--col-main);
+  border: none;
+  cursor: pointer;
 }
 
 .carrito-popup{
@@ -213,7 +237,8 @@ margin-left:2rem;
   transform: translate(-50%, -50%);
   text-align: center;
   padding: 4rem;
-  background-color: #000;
+  background-color: var(--col-main);
+  border: 5px solid var(--accent);
   color: var(--bg-main);
   font-size: 2rem;
   font-weight: bold;
