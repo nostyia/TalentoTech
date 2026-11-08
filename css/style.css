@@ -267,7 +267,6 @@ main h1 {
   min-height: 14rem;
   max-height: 200px;
   resize:none;
-  field-sizing: content;
 }
 #contacto form textarea, #contacto form input {
     width: 100%;
