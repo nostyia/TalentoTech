@@ -46,6 +46,7 @@ export const mostrarProductos = async () => {
 			// imagen de cada producto
 			const imagen = document.createElement("img");
 			imagen.src = prod.thumbnail;
+      imagen.alt = prod.title;
 
 			// titulo de cada producto
 			const titulo = document.createElement("h2");
