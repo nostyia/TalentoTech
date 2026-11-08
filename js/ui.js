@@ -14,7 +14,7 @@ export const actualizarContador = (carrito) => {
 			contadorExiste.remove();
 		}
 		const contador = document.createElement("a");
-		contador.href = "../pages/carrito.html";
+		contador.href = "./pages/carrito.html";
 		contador.id = "contador-carrito";
 		contador.classList.add("fa", "fa-cart-plus");
 		contador.remove();
