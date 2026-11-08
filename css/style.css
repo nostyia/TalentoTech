@@ -61,6 +61,8 @@ select {
   display:flex;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
+  margin: 0 auto;
 }
 #menu-toggle {
   display: none;
@@ -70,7 +72,6 @@ select {
 }
 #logo {
   height: 4rem;
-  margin-left:4rem;
 }
 #navbar-ul {
 	display: flex;
@@ -79,7 +80,6 @@ select {
 	list-style: none;
 	height: 6rem;
 	overflow: hidden;
-  margin-right: 4rem;
 }
 
 #navbar-ul li a {
@@ -112,8 +112,8 @@ main h1 {
 }
 #contenedor-productos {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 2rem;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+	gap: 3rem;
 }
 .producto {
   display:flex;
@@ -186,23 +186,41 @@ main h1 {
 }
 #lista-productos li:nth-child(odd){
   background-color: var(--accent);
+  border-radius: 1rem;
 }
 
 #lista-productos li button {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    color: var(--text-main);
+    border-radius: 0.5rem;
+}
+#lista-productos li:nth-child(odd) button{
+  background-color: var(--col-main);
+}
+
+#lista-productos li:nth-child(even) button{
+  background-color: var(--accent);
 }
 
 .botones-carrito {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   margin-top: auto;
   gap: 2rem;
 }
 .botones-carrito button{
-  flex:1;
+  /* flex:1; */
+  background-color: var(--col-main);
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+
 }
 #contador-carrito {
   display: flex;
@@ -246,7 +264,7 @@ main h1 {
 }
 #contacto form textarea {
   height: 100px;
-  min-height: 50px;
+  min-height: 14rem;
   max-height: 200px;
   resize:none;
   field-sizing: content;
@@ -278,14 +296,11 @@ main h1 {
   font-weight: bold;
 }
 
-@media (max-width: 720px){
+@media (max-width: 678px){
 main h1{
   font-size: 2rem;
 }
-#contenedor-productos {
-display: grid;
-grid-template-columns: 1fr;
-}
+
 #menu-toggle{
   display: flex;
   justify-content: center;
@@ -295,14 +310,14 @@ grid-template-columns: 1fr;
   font-size: 2.5rem;
 }
 #toggle:checked ~ #navbar-ul {
-  display: none;
-  background-color: #fff;
+  display: flex;
 }
 #logo {
   height: 3rem;
 }
 
 #navbar-ul {
+  display: none;
   flex-direction: column;
   background-color: #fff;
   position: absolute;
@@ -311,8 +326,17 @@ grid-template-columns: 1fr;
 	height: auto;
   z-index: 10;
   margin: 0;
+  padding: 0;
+}
+#navbar-ul li {
+  width:100%;
+}
+
+#navbar-ul li:hover a{
+  background-color: var(--col-main);
+  color: var(--text-main)
 }
   #contacto form {
-    width: 90dvw;
+    width: 100%;
   }
 }
